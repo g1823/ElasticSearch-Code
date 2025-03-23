@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Elasticsearch 依赖
+    implementation 'org.elasticsearch:elasticsearch:7.8.0'
+
+    // Elasticsearch 的 REST 高级客户端
+    implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.8.0'
+
+    // log4j 依赖 2.8.2版本log4j有问题，LogManager无法获取到日志实例
+//    implementation 'org.apache.logging.log4j:log4j-api:2.8.2'
+//    implementation 'org.apache.logging.log4j:log4j-core:2.8.2'
+
+    implementation 'org.apache.logging.log4j:log4j-api:2.15.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.15.0'
+    // Jackson 依赖
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.9'
+
+    // JUnit 单元测试
+    testImplementation 'junit:junit:4.12'
+}
+
+
+test {
+    useJUnitPlatform()
+}
